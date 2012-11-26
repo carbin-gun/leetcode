@@ -1,4 +1,8 @@
 package sum;
+/*
+ * I tried a o(n^3) algorithm, pass the leetcode, seems there is another algorithm
+ * only takes o(n^2 log n) time, I would like to try it later. 
+ */
 
 
 import java.util.ArrayList;
