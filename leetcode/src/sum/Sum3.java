@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
+ * 3Sum
  * The algorithm is to sort the array first, and then start from the the number which 
  * is no larger than 0, then find then match from the number larger than the source 
  * number, it can be done by o(n^2) time, which is move from either side at a time.

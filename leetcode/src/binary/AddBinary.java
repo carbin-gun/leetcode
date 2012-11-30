@@ -1,12 +1,13 @@
 package binary;
 
+/**
+ * Add Binary
+ * This is a o(n) algorithm, it is quit easy, just to add from low to high, keep a upgrade
+ * flag, need to take care that even the shorter string is done, we still need to keep add
+ * on the longer string, until the upgrade flag is false;
+ *
+ */
 public class AddBinary {
-	/**
-	 * Low
-	 * @param a
-	 * @param b
-	 * @return
-	 */
 	public String addBinary(String a, String b) {
         if (a == null || b == null)
             return "";

@@ -3,6 +3,7 @@ package sum;
 import java.util.Arrays;
 
 /**
+ * 3Sum Closest
  * Similar like the the 3 sum with target, keep to trace a min as a distance from the 
  * target. when ever it falls into the min distance update the min.
  * 

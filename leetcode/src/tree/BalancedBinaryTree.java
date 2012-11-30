@@ -1,4 +1,9 @@
 package tree;
+/**
+ * Balanced Binary Tree
+ * It will caculate the height as well, if the height is -1, means that the subtree is
+ * no longer balanced.
+ */
 
 public class BalancedBinaryTree {
 	/**

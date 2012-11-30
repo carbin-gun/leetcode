@@ -1,5 +1,8 @@
 package tree;
-
+/**
+ * Binary Tree Maximum Path Sum
+ *
+ */
 public class MaxTreePathSum {
 	public int maxPathSum(TreeNode root) {
         // Start typing your Java solution below

@@ -1,6 +1,7 @@
 package besttime;
 
 /**
+ * Best Time to Buy and Sell Stock II
  * This is buy and sell allow no limited time, then we just simple add all the positive 
  * daily profit. 
  */

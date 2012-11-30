@@ -1,6 +1,7 @@
 package besttime;
 
 /**
+ * Best Time to Buy and Sell Stock
  * This is one sell and buy allow, be careful that sell should later than buy,
  * We just keep tracking the max_profit and current lowest price until today.
  * it takes o(n) time. 

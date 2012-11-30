@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
+ * Anagrams
  * sort every string, and hash the sorted string to a hashmap, then get out the 
  * same key strings.
  */
