@@ -1,9 +1,13 @@
 package string;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+
+/**
+ * sort every string, and hash the sorted string to a hashmap, then get out the 
+ * same key strings.
+ */
 
 public class Anagrams {
 	public ArrayList<String> anagrams(String[] strs) {
@@ -21,7 +25,7 @@ public class Anagrams {
             	al.add(str);
                 hs.put(newStr, al);
             } else {
-            	ArrayList<String> al = new ArrayList();
+            	ArrayList<String> al = new ArrayList<String>();
             	al.add(str);
                 hs.put(newStr, al);
             }

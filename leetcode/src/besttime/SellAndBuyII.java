@@ -1,5 +1,9 @@
 package besttime;
 
+/**
+ * This is buy and sell allow no limited time, then we just simple add all the positive 
+ * daily profit. 
+ */
 public class SellAndBuyII {
 	public int maxProfit(int[] prices) {
 		// Start typing your Java solution below

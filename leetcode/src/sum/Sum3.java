@@ -1,10 +1,16 @@
 package sum;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
+
+/**
+ * The algorithm is to sort the array first, and then start from the the number which 
+ * is no larger than 0, then find then match from the number larger than the source 
+ * number, it can be done by o(n^2) time, which is move from either side at a time.
+ * It can prove that all the result can be found correctly.
+ *
+ */
 
 public class Sum3 {
 	public ArrayList<ArrayList<Integer>> threeSum(int[] num) {

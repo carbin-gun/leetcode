@@ -1,10 +1,12 @@
 package sum;
 
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
+/**
+ * Similar like the the 3 sum with target, keep to trace a min as a distance from the 
+ * target. when ever it falls into the min distance update the min.
+ * 
+ */
 public class SumCloset {
 	public int threeSumClosest(int[] num, int target) {
         // Start typing your Java solution below

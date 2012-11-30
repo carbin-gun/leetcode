@@ -1,5 +1,12 @@
 package besttime;
 
+/**
+ * This is one sell and buy allow, be careful that sell should later than buy,
+ * We just keep tracking the max_profit and current lowest price until today.
+ * it takes o(n) time. 
+ *
+ */
+
 public class SellAndBuyI {
 	public int maxProfit(int[] prices) {
         // Start typing your Java solution below

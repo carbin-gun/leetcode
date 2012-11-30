@@ -1,4 +1,11 @@
 package besttime;
+/**
+ * It only can buy and sell twice in all, then the buy and sell can be separated by a day,
+ * so it changes to get the max separated day for max one time buy and sell at each side,
+ * it in all will take o(n^2) runtime.
+ *
+ */
+
 
 public class SellAndBuyIII {
 	public int maxProfit(int[] prices) {

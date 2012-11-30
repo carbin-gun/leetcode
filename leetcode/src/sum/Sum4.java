@@ -1,14 +1,16 @@
 package sum;
-/*
- * I tried a o(n^3) algorithm, pass the leetcode, seems there is another algorithm
- * only takes o(n^2 log n) time, I would like to try it later. 
- */
-
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+
+/**
+ * I tried a o(n^3) algorithm, pass the leetcode, seems there is another algorithm
+ * only takes o(n^2 log n) time, I would like to try it later. which is calculate 2-sum
+ * first and then using binary search to find the match between 2-sum, it need to take 
+ * care of all the duplicate.
+ */
 
 public class Sum4 {
 	public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {

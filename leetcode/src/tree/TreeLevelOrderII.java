@@ -22,7 +22,7 @@ public class TreeLevelOrderII {
         ArrayList<Integer> level = new ArrayList<Integer>();
         while (!ll.isEmpty()) {
             TreeNode next = ll.pop();
-            if (next.val == Integer.MAX_VALUE) {
+            if (next == sep) {
                 result.add(level);
                 level = new ArrayList<Integer>();
                 if (!ll.isEmpty())
