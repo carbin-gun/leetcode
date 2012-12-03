@@ -40,8 +40,5 @@ public class LinkedListToBST {
     	ListNode a = new ListNode(1);
     	a.next = new ListNode(3);
     	new LinkedListToBST().sortedListToBST(a);
-    	StringBuilder sb = new StringBuilder().append("1");
-    	sb.charAt(arg0)
-    	sb.toString();
     }
 }
