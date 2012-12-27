@@ -82,5 +82,7 @@ public class LargestRectangle {
 		LargestRectangle lr = new LargestRectangle();
 		int a[] = { 0 };
 		lr.largestRectangleArea(a);
+		String s = "a";
+		s = s + 't';
 	}
 }

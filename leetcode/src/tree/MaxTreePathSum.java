@@ -21,7 +21,7 @@ public class MaxTreePathSum {
             int[] right = maxFindMax(root.right);
             re[0] = left[0] > 0 ? (left[0] + root.val) : root.val;
             // Following line is good point of how to deal the MAX and MIN out of bound issue.
-            re[0] = re[0] - root.val> right[0] ? re[0] : (right[0] + root.val); 
+            re[0] = re[0] - root.val > right[0] ? re[0] : (right[0] + root.val); 
             re[1] = left[1] > right[1] ? left[1] : right[1];
             int currentMax = root.val;
             if (left[0] > 0)
