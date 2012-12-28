@@ -1,4 +1,4 @@
-package binary;
+package list;
 
 public class ListNode {
 	public int val;

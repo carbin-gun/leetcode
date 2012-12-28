@@ -1,6 +1,6 @@
 package tree;
 
-import binary.ListNode;
+import list.ListNode;
 /**
  * Convert Sorted List to Binary Search Tree 
  *

@@ -1,11 +1,11 @@
 package unsorted;
 
 import java.util.ArrayList;
+
 /**
- * Insert Interval
- * This is a little bit skillful, every one know the question, but hard to write down
- * a smart solution.
- *
+ * Insert Interval This is a little bit skillful, every one know the question,
+ * but hard to write down a smart solution.
+ * 
  */
 public class InsertInterval {
 
@@ -33,11 +33,8 @@ public class InsertInterval {
 			int start = Math.min(intervals.get(s).start, newInterval.start);
 			int end = Math.max(intervals.get(e).end, newInterval.end);
 			intervals.subList(s, e + 1).clear();
-			if (s < intervals.size()) {
-				intervals.add(s, new Interval(start, end));
-			} else {
-				intervals.add(new Interval(start, end));
-			}
+			intervals.add(s, new Interval(start, end));
+
 		}
 		return intervals;
 	}
