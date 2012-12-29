@@ -2,6 +2,7 @@ package unsorted;
 
 /**
  * First Missing Positive
+ * based on the idea make A[i] = i + 1, and switch the value to the right position.
  */
 public class FirstMissingInteger {
 	public int firstMissingPositive(int[] A) {
