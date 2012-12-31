@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 /**
  * Combination Sum II
- * 1 D DP
+ * http://leetcode.com/questions/218/combination-sum-ii
  */
 
 public class CombinationSumII {

@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 /**
  * Binary Tree Zigzag Level Order Traversal
+ * http://leetcode.com/questions/52/binary-tree-zigzag-level-order-traversal
  *
  */
-public class ZigZagLevelOrder {
+public class BinaryTreeZigzagLevelOrderTraversal {
 	public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
         // Start typing your Java solution below
         // DO NOT write main() function
@@ -58,7 +59,7 @@ public class ZigZagLevelOrder {
     }
 	
 	public static void main(String argv[]) {
-		ZigZagLevelOrder zz = new ZigZagLevelOrder();
+		BinaryTreeZigzagLevelOrderTraversal zz = new BinaryTreeZigzagLevelOrderTraversal();
 		System.out.print(zz.zigzagLevelOrder(new TreeNode(1)));
 	}
 }
