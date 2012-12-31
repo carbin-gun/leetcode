@@ -2,6 +2,7 @@ package string;
 /**
  * Edit Distance
  * Be careful that the initial value of the DP matrix;
+ * http://leetcode.com/questions/248/edit-distance
  * 
  */
 public class EditDistance {
