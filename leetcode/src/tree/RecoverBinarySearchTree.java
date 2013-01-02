@@ -3,8 +3,6 @@ package tree;
 /**
  * Recover Binary Search Tree
  * 
- * @author kwwang
- * 
  */
 public class RecoverBinarySearchTree {
 	public void recoverTree(TreeNode root) {

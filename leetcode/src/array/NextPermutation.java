@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class NextPermutation {
 	public void nextPermutation(int[] num) {
-		// Start typing your Java solution below
+    	// Start typing your Java solution below
 		// DO NOT write main() function
 		if (num == null || num.length <= 1) {
 			return;
@@ -19,14 +19,12 @@ public class NextPermutation {
 		while (i > 0 && num[i] <= num[i - 1]) {
 			i--;
 		}
-		if (i == 0) {
-			for (int j = 0; j < num.length / 2; j++) {
+		for (int j = i; j < (num.length + i) / 2; j++) {
 				int tmp = num[j];
-				num[j] = num[num.length - 1 - j];
-				num[num.length - 1 - j] = tmp;
-			}
-		} else {
-			Arrays.sort(num, i, num.length);
+				num[j] = num[num.length - 1 - j + i];
+				num[num.length - 1 - j + i] = tmp;
+		}
+		if (i != 0) {
 			int replace = num[i - 1];
 			for (int j = i; j < num.length; j++) {
 				if (replace < num[j]) {
