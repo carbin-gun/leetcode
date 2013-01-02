@@ -23,26 +23,20 @@ public class MinimumWindowSubstring {
 				need.put(c, 1);
 			}
 		}
-		HashMap<Character, Integer> hasFound = new HashMap<Character, Integer>();
 		int start = 0;
 		int end = 0;
 		int optStart = -1;
 		int optEnd = -1;
 		int counter = T.length();
-		while (end < S.length() || counter == 0) {
+		while (end < S.length() || counter == 0) { // even if end reach the end, we still need to optimize start.
 			if (counter > 0) {
 				char c = S.charAt(end);
 				if (need.containsKey(c)) {
-					if (hasFound.containsKey(c)) {
-						int found = hasFound.get(c);
-						if (found < need.get(c)) {
+						int found = need.get(c);
+						if (found > 0) {
 							counter--;
 						}
-						hasFound.put(c, found + 1);
-					} else {
-						counter--;
-						hasFound.put(c, 1);
-					}
+						need.put(c, found - 1);
 				}
 				end++;
 			} else {
@@ -53,11 +47,11 @@ public class MinimumWindowSubstring {
 				char c = S.charAt(start);
 				start++;
 				if (need.containsKey(c)) {
-					int found = hasFound.get(c);
-					if (found == need.get(c)) {
+					int found = need.get(c);
+					if (found == 0) {
 						counter++;
 					}
-					hasFound.put(c, found - 1);
+					need.put(c, found + 1);
 				}
 			}
 		}
