@@ -1,5 +1,6 @@
 package tree;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -9,35 +10,27 @@ import java.util.Stack;
  * (ie, symmetric around its center).
  */
 public class SymmetricTree {
-	public boolean isSymmetric(TreeNode root) {
+	
+	public boolean isSymmetricRecusive(TreeNode root) {
         // Start typing your Java solution below
         // DO NOT write main() function
-        Stack<Integer> s = new Stack<Integer>();
 		if (root == null) {
 			return true;
 		}
-		check(root.left, s, false);
-		check(root.right, s, true);
-		return s.isEmpty();
+		return isSymmetric(root.left, root.right);
     }
     
-    public void check(TreeNode root, Stack<Integer> s, boolean isRight) {
-    
-    	if (root == null) {
-    		return;
+    public boolean isSymmetric(TreeNode left, TreeNode right) {
+    	if (left == null && right == null) {
+    		return true;
+    	} else if (left == null || right == null) {
+    		return false;
     	}
-    	check(root.left, s, isRight);
-    	if (isRight) {
-    		if (!s.isEmpty() && root.val == s.peek()) {
-    			s.pop();
-    		} else {
-    			s.push(Integer.MIN_VALUE);
-    			return;
-    		}
+    	if (left.val != right.val) {
+    		return false;
     	} else {
-    		s.push(root.val);
+    		return isSymmetric(left.right, right.left) && isSymmetric(right.right, left.left);
     	}
-    	check(root.right, s, isRight);
     }
     
 }
