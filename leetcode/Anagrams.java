@@ -9,6 +9,7 @@ import java.util.HashMap;
  * anagrams.
  * 
  * Note: All inputs will be in lower-case.
+ * http://discuss.leetcode.com/questions/227/anagrams
  */
 
 /*
