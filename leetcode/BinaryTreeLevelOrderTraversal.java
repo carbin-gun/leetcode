@@ -27,40 +27,40 @@ import java.util.ArrayList;
  */
 public class BinaryTreeLevelOrderTraversal {
 	public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        ArrayList<ArrayList<Integer>> ret = new ArrayList<ArrayList<Integer>>();
-        TreeNode sep = new TreeNode(Integer.MAX_VALUE);
-        LinkedList<TreeNode> list = new LinkedList<TreeNode>();
-        if (root == null) {
-            return ret;
-        }
-        list.add(root);
-        list.add(sep);
-        ArrayList<Integer> level = new ArrayList<Integer>();
-        while (list.size() > 1) {
-        	TreeNode cur = list.poll();
-        	if (cur == sep) {
-        		list.add(cur);
-        		ret.add(level);
-        		level = new ArrayList<Integer>();
-        	} else {
-        		level.add(cur.val);
-        		if (cur.left != null) {
-        			list.add(cur.left);
-        		}
-        		if (cur.right != null) {
-        			list.add(cur.right);
-        		}
-        	}
-        }
-        ret.add(level);
-        return ret;
-    }
-	
+		// Start typing your Java solution below
+		// DO NOT write main() function
+		ArrayList<ArrayList<Integer>> ret = new ArrayList<ArrayList<Integer>>();
+		TreeNode sep = new TreeNode(Integer.MAX_VALUE);
+		LinkedList<TreeNode> list = new LinkedList<TreeNode>();
+		if (root == null) {
+			return ret;
+		}
+		list.add(root);
+		list.add(sep);
+		ArrayList<Integer> level = new ArrayList<Integer>();
+		while (list.size() > 1) {
+			TreeNode cur = list.poll();
+			if (cur == sep) {
+				list.add(cur);
+				ret.add(level);
+				level = new ArrayList<Integer>();
+			} else {
+				level.add(cur.val);
+				if (cur.left != null) {
+					list.add(cur.left);
+				}
+				if (cur.right != null) {
+					list.add(cur.right);
+				}
+			}
+		}
+		ret.add(level);
+		return ret;
+	}
+
 	public ArrayList<ArrayList<Integer>> levelOrderNoSep(TreeNode root) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
+		// Start typing your Java solution below
+		// DO NOT write main() function
 		LinkedList<TreeNode> l1 = new LinkedList<TreeNode>();
 		LinkedList<TreeNode> l2 = new LinkedList<TreeNode>();
 		ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
@@ -72,10 +72,10 @@ public class BinaryTreeLevelOrderTraversal {
 		while (!l1.isEmpty() || !l2.isEmpty()) {
 			if (!l1.isEmpty()) {
 				TreeNode current = l1.pop();
-			if (current.left != null)
-				l2.add(current.left);
-			if (current.right != null)
-				l2.add(current.right);
+				if (current.left != null)
+					l2.add(current.left);
+				if (current.right != null)
+					l2.add(current.right);
 				level.add(current.val);
 			} else {
 				LinkedList<TreeNode> tmp = l1;
@@ -87,5 +87,5 @@ public class BinaryTreeLevelOrderTraversal {
 		}
 		al.add(level);
 		return al;
-    }
+	}
 }
