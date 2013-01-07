@@ -1,4 +1,3 @@
-import list.ListNode;
 
 /**
  * Add Two Numbers You are given two linked lists representing two non-negative
