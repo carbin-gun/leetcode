@@ -16,7 +16,7 @@ import java.util.ArrayList;
 /*
  * A DP solution can solve this problem. Consider that we use n as the k element or not.
  */
-public class Combination {
+public class Combinations {
 	public ArrayList<ArrayList<Integer>> combine(int n, int k) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
