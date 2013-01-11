@@ -1,9 +1,14 @@
-package string;
 /**
- * Integer to Roma 
- *
+ * Integer to Roman 
+ * 
+ * Given an integer, convert it to a Roman numeral.
+ * Input is guaranteed to be within the range from 1 to 3999.
  */
-public class IntToRoman {
+
+/*
+ * Keep in mind how to switch
+ */
+public class IntegertoRoman {
 	public String intToRoman(int num) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
