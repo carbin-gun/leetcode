@@ -1,47 +1,52 @@
-package unsorted;
+
 
 import java.util.Stack;
 
 /**
- * Largest Rectangle in Histogram With first algorithm I worked out, it can not
- * pass large data.
+ * Largest Rectangle in Histogram Given n non-negative integers representing the
+ * histogram's bar height where the width of each bar is 1, find the area of
+ * largest rectangle in the histogram.
  * 
+ * http://discuss.leetcode.com/questions/259/largest-rectangle-in-histogram
  */
 
-public class LargestRectangle {
+/*
+ * This is a solution of O(n) runtime. Idea is to keep a stack of increase
+ * height index.
+ */
+public class LargestRectangleinHistogram {
 	public int largestRectangleArea(int[] height) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
-		int i = 0;
-		int max = 0;
-		Stack<Integer> s = new Stack<Integer>();
-		while (i < height.length) {
-			if (s.empty() || height[s.peek()] < height[i]) {
-				s.push(i);
-			} else if (height[s.peek()] >= height[i]) {
-				while (!s.empty() && height[s.peek()] >= height[i]) {
-					int index = s.pop();
-					if (!s.empty()) {
-						max = Math.max(max, height[index] * (i - s.peek() - 1));
-					} else {
-						max = Math.max(max, height[index] * (i));
-					}
-				}
-				s.push(i);
-			}
-			i++;
+		if (height.length == 0) {
+			return 0;
 		}
-		while (!s.empty()) {
-			int cur = s.pop();
-			if (!s.empty()) {
-				max = Math.max(max, height[cur] * (i - s.peek() - 1));
+		Stack<Integer> higher = new Stack<Integer>();
+		int max = 0;
+		int i = 0;
+		while (i < height.length) {
+			if (higher.isEmpty() || height[higher.peek()] < height[i]) {
+				higher.push(i);
+				i++;
 			} else {
-				max = Math.max(max, height[cur] * (i));
+				int h = higher.pop();
+				// I made mistake here, the width should be
+				// the current i - 1 as the right, stack top + 1 as left.
+				int width = higher.isEmpty() ? i : i - higher.peek() - 1;
+				max = Math.max(max, height[h] * width);
 			}
+		}
+		while (!higher.isEmpty()) {
+			int h = higher.pop();
+			int width = higher.isEmpty() ? i : i - higher.peek() - 1;
+			max = Math.max(max, height[h] * width);
 		}
 		return max;
 	}
 
+	/*
+	 * Following is a recursive method which is O(n log n) running time.
+	 */
 	public int largestRectangleAreaNolarge(int[] height) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
@@ -76,13 +81,5 @@ public class LargestRectangle {
 			}
 		}
 		return index;
-	}
-
-	public static void main(String argv[]) {
-		LargestRectangle lr = new LargestRectangle();
-		int a[] = { 0 };
-		lr.largestRectangleArea(a);
-		String s = "a";
-		s = s + 't';
 	}
 }
