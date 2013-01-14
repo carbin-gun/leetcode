@@ -1,10 +1,9 @@
-package array;
 
-import java.util.Arrays;
 
 /**
  * Median of Two Sorted Arrays
- * it is a hug complex base case;
+ * http://discuss.leetcode.com/questions/142/median-of-two-sorted-arrays
+ * 
  */
 public class MedianOfTwoSortedArrays {
 	public double findMedianSortedArrays(int A[], int B[]) {
@@ -112,7 +111,6 @@ public class MedianOfTwoSortedArrays {
 			} else {
 				return A[mid];
 			}
-
 		}
 	}
 	
