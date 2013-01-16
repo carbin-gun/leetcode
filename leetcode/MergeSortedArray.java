@@ -10,11 +10,31 @@
  */
 
 /*
- * it is a o(m + n) solution, take care when you move A's elements to it's end, 
- * need to start from the end to front to avoid the conflict. 
+ * it is a o(m + n) solution, no need to move first, just from end to front. easy.
  */
 public class MergeSortedArray {
 	public void merge(int A[], int m, int B[], int n) {
+		// Start typing your Java solution below
+		// DO NOT write main() function
+		int pA = m - 1;
+		int pB = n - 1;
+		int pC = m + n - 1;
+		while (pA >= 0 || pB >= 0) {
+			if (pA < 0) {
+				A[pC--] = B[pB--];
+			} else if (pB < 0) {
+				A[pC--] = A[pA--];
+			} else {
+				if (A[pA] < B[pB]) {
+					A[pC--] = B[pB--];
+				} else {
+					A[pC--] = A[pA--];
+				}
+			}
+		}
+	}
+
+	public void mergeNotGood(int A[], int m, int B[], int n) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
 		for (int i = m - 1; i >= 0; i--) {
