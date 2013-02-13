@@ -30,6 +30,7 @@ public class PermutationsII {
 		return ret;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void dfs(ArrayList<ArrayList<Integer>> ret, ArrayList<Integer> cur,
 			int[] num, int[] mask) {
 		if (cur.size() == num.length) {

@@ -1,8 +1,9 @@
-package array;
-
 /**
  * Plus One
  * 
+ * Given a number represented as an array of digits, plus one to the number.
+ * 
+ * http://discuss.leetcode.com/questions/242/plus-one
  */
 public class PlusOne {
 	public int[] plusOne(int[] digits) {
