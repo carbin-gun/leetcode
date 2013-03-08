@@ -1,5 +1,9 @@
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,6 +44,13 @@ public class TwoSigmaCodeTestCopyFile {
 	}
 
 	public static void main(String argvs[]) {
+		try {
+			InputStreamReader is = new InputStreamReader(new FileInputStream(""));
+			BufferedReader br = new BufferedReader(is);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);
 		int numberOfDataCenter = 0;
