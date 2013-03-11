@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-
-import list.ListNode;
-
 /**
  * Merge k Sorted Lists 
  * 
