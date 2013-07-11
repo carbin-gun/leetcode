@@ -35,4 +35,10 @@ public class JumpGame {
 		}
 		return true;
 	}
+	
+	public static void main(String argv[]) {
+		JumpGame jg = new JumpGame();
+		int[] input = {2,2,0,2};
+		System.out.println(jg.canJump(input));
+	}
 }

@@ -43,4 +43,23 @@ public class GrayCode {
 		}
 		return ret;
 	}
+	
+	public int grayCodeN(int index) {
+		if (index == 1) {
+			return 0;
+		} 
+		int x = 1;
+		while (x < index) {
+			x *= 2;
+		}
+		return grayCodeN(x + 1 - index) + x / 2;
+	}
+	
+	public static void main(String arg[]) {
+		GrayCode g = new GrayCode();
+		ArrayList<Integer> result = g.grayCode(8);
+		for (int i = 1; i <= 256; i++) {
+			System.out.println(i + ":" + result.get(i - 1) + "-" + g.grayCodeN(i));
+		}
+	}
 }

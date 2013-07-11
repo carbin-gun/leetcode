@@ -41,4 +41,33 @@ public class PermutationSequence {
 		}
 		return new String(str);
 	}
+	
+	public String getPermutation2(int n, int k) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        char[] chars = new char[n];
+        int subNum = 1;
+        for (int i = 0; i < n; i++) {
+            subNum *= (i + 1);
+            chars[i] = (char)('1' + i);
+        }
+        k = k - 1;
+        subNum /= n;
+        for (int i = 0; i < n - 1; i++) {
+            int select = k / subNum;
+            char tmp = chars[i + select];
+            for (int j = select; j > 0; j--) {
+                chars[i + j] = chars[i + j - 1];
+            }
+            chars[i] = tmp;
+            k = k % subNum;
+            subNum /= (n - 1 - i);
+        }
+        return new String(chars);
+    }
+	
+	public static void main(String argv[]) {
+		PermutationSequence ps = new PermutationSequence();
+		ps.getPermutation2(2, 2);
+	}
 }

@@ -113,8 +113,63 @@ public class MedianOfTwoSortedArrays {
 			}
 		}
 	}
+	public double findMedianSortedArraysConvenient(int A[], int B[]) {
+		int m = A.length;
+		int n = B.length;
+		int longer[] = m > n ? A : B;
+		int shorter[] = m > n ? B : A;
+		if (shorter.length == 0) {
+			if (longer.length % 2 == 1) {
+				return longer[longer.length / 2];
+			} else {
+				return (longer[longer.length / 2] + longer[longer.length / 2 + 1]) / 2.0;
+			}
+		}
+		if ((m + n) % 2 == 1) {
+			return findkth(longer, shorter, (m + n) / 2 + 1);
+		} else {
+			return (findkth(longer, shorter, (m + n) / 2) + findkth(longer, shorter, (m + n) / 2 + 1)) / 2.0;
+		}
+	}
+	
+	public int findkth(int A[], int B[], int k) {
+		int start = 0;
+		int end = A.length - 1;
+		int i = start + (end - start) / 2;
+		int j = k - i - 1;
+		while (start <= k) {
+			if (get(A, i) <= get(B, j) && get(A, i) >= get(B, j - 1)) {
+				return get(A, i);
+			} else if (get(B, j) <= get(A, i) && get(B, j) >= get(A, i - 1)) {
+				return get(B, j);
+			} else if (get(A, i) < get(B, j)) {
+				start = i + 1;
+			} else {
+				end = i;
+			}
+			i = start + (end - start) / 2;
+			j = k - i - 1;
+		}
+		return get(A, i);
+	}
+	
+	public int get(int A[], int i) {
+		if (i < 0)
+			return Integer.MIN_VALUE;
+		else if (i > A.length - 1) 
+			return Integer.MAX_VALUE;
+		return A[i];
+	}
 	
 	public static void main(String argv[]) {
+//		MedianOfTwoSortedArrays mta = new MedianOfTwoSortedArrays();
+//		int A[] = {10000};
+//		int B[] = {10002};
+//		System.out.println(mta.findkth(A, B, 1));
+//		System.out.println(mta.findkth(A, B, 2));
+		String a = "absadfasdf";
+		String t[] = a.split("\\*+");
+//		for ()
 		
 	}
 }

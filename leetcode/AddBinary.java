@@ -14,35 +14,40 @@ public class AddBinary {
 	public String addBinary(String a, String b) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
-		if (a.equals("") && b.equals("")) {
-			return "";
-		} else if (a.equals("")) {
-			return b;
-		} else if (b.equals("")) {
-			return a;
-		}
-		StringBuilder sb = new StringBuilder("");
-		String small = a.length() > b.length() ? b : a;
-		String large = a.length() > b.length() ? a : b;
-		int carry = 0;
-		for (int i = 0; i < small.length(); i++) {
-			int x = small.charAt(small.length() - 1 - i) - '0';
-			int y = large.charAt(large.length() - 1 - i) - '0';
-			int sum = x + y + carry;
-			sb.append(sum % 2);
-			carry = sum / 2;
-		}
-		for (int i = large.length() - small.length() - 1; i >= 0; i--) {
-			// above line is where I always mess up.
-			int x = large.charAt(i) - '0';
-			int sum = x + carry;
-			sb.append(sum % 2);
-			carry = sum / 2;
-		}
-		if (carry == 1) {
-			sb.append(1);
-		}
-		return sb.reverse().toString();
+		StringBuilder sb = new StringBuilder();
+        int carry = 0;
+        int p = a.length() - 1;
+        int q = b.length() - 1;
+        while (p >= 0 && q >= 0) {
+            int i = a.charAt(p) - '0';
+            int j = b.charAt(q) - '0';
+            int sum = carry + i + j;
+            carry = sum / 2;
+            sb.append(sum % 2);
+            p--;
+            q--;
+        }
+        if (p < 0) {
+            while (q >= 0) {
+                int i = b.charAt(q) - '0';
+                int sum = carry + i;
+                carry = sum / 2;
+                sb.append(sum % 2);
+                q--;
+            }
+        } else {
+            while (p >= 0) {
+                int i = a.charAt(p) - '0';
+                int sum = carry + i;
+                carry = sum / 2;
+                sb.append(sum % 2);
+                p--;
+            }
+        }
+        if (carry == 1) {
+            sb.append(1);
+        }
+        return sb.reverse().toString();
 	}
 
 	public static void main(String argv[]) {

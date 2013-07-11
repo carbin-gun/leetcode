@@ -27,6 +27,9 @@ public class SurroundedRegions {
 		for (int i = 1; i < board[0].length - 1; i++) {
 			dfs(0, i, isAlive, board);
 			dfs(board.length - 1, i, isAlive, board);
+		}
+		
+		for (int i = 1; i < board.length - 1; i++) {
 			dfs(i, 0, isAlive, board);
 			dfs(i, board.length - 1, isAlive, board);
 		}

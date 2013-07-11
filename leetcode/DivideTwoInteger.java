@@ -21,7 +21,7 @@ public class DivideTwoInteger {
 		long divisorLong = Math.abs((long) divisor);
 		long dividendLong = Math.abs((long) dividend);
 		long div = divisorLong;
-		while (div << 1 <= dividendLong) { // It should be <=, not <.
+		while (div < dividendLong) { // It should be <=, not <.
 			div <<= 1;
 		}
 		int ret = 0;
