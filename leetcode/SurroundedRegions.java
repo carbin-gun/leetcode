@@ -31,11 +31,11 @@ public class SurroundedRegions {
 		
 		for (int i = 1; i < board.length - 1; i++) {
 			dfs(i, 0, isAlive, board);
-			dfs(i, board.length - 1, isAlive, board);
+			dfs(i, board[0].length - 1, isAlive, board);
 		}
 
 		for (int i = 1; i < board.length - 1; i++) {
-			for (int j = 1; j < board.length - 1; j++) {
+			for (int j = 1; j < board[0].length - 1; j++) {
 				if (!isAlive[i][j]) {
 					board[i][j] = 'X';
 				}
