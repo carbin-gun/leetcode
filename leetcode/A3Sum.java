@@ -7,7 +7,7 @@ import java.util.HashSet;
  * that a + b + c = 0? Find all unique triplets in the array which gives the sum
  * of zero. 
  * Note: Elements in a triplet (a,b,c) must be in non-descending order.
- * (ie, a ² b ² c) The solution set must not contain duplicate triplets. 
+ * (ie, a ï¿½ b ï¿½ c) The solution set must not contain duplicate triplets. 
  * For example, given array S = [-1,0,1,2,-1,-4], 
  * A solution set is: [ [-1, 0, 1],[-1, -1, 2]] 
  * http://discuss.leetcode.com/questions/15/3sum
@@ -30,10 +30,6 @@ public class A3Sum {
 		Arrays.sort(num);
 		int first = 0;
 		while (first < num.length - 2 && num[first] <= 0) {
-			if (first != 0 && num[first] == num[first - 1]) {
-				first++;
-				continue;
-			}
 			int second = first + 1;
 			int third = num.length - 1;
 			int need = -num[first];
