@@ -14,38 +14,27 @@ import java.util.LinkedList;
 public class SimplifyPath {
 	public String simplifyPath(String path) {
     	// Start typing your Java solution below
-		// DO NOT write main() function
-		LinkedList<String> simple = new LinkedList<String>();
-		path = path.substring(1);
-		int index = path.indexOf('/');
-		while (index != -1) {
-			String subPath = path.substring(0, index);
-			if (subPath.equals("..") && !simple.isEmpty()) {
-					simple.removeLast();
-			} else if (subPath.length() != 0 && !subPath.equals(".") && !subPath.equals("..")) {
-				simple.add(subPath);
-			}
-			if (path.length() > index + 1) {
-				path = path.substring(index + 1);
-			} else {
-				path = "";
-			}
-			index = path.indexOf('/');
-		}
-		if (path.equals("..") && !simple.isEmpty()) {
-			simple.removeLast();
-		} else if (!path.equals("") && !path.equals(".") && !path.equals("..")) {
-            simple.add(path);
-        } 
-		if (simple.isEmpty()) {
-			return "/";
-		}
-		StringBuilder sb = new StringBuilder("");
-		while (!simple.isEmpty()) {
-			sb.append("/");
-			sb.append(simple.poll());
-		}
-		return sb.toString();
+	// DO NOT write main() function
+	    String[] pathes = path.split("/");
+            LinkedList<String> stack = new LinkedList();
+            for (int i = 0; i < pathes.length; i++) {
+                if (pathes[i].equals("..")) {
+                    if (!stack.isEmpty()) {
+                        stack.pop();
+                    }
+                } else if (!pathes[i].equals("") && !pathes[i].equals(".")) {
+                    stack.push(pathes[i]);
+                }
+            }
+            StringBuilder sb = new StringBuilder("");
+            if (stack.isEmpty()) {
+                return "/";
+            } else {
+                while (!stack.isEmpty()) {
+                    sb.append("/").append(stack.pollLast());
+                }
+            }
+            return sb.toString();
 	}
 	
 	public static void main(String argv[]) {
