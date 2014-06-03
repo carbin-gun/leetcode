@@ -53,22 +53,21 @@ public class ImplementstrStr {
 	 * To generate the prefix array
 	 */
 	public int[] prefix(char[] pattern) {
-		int[] prefix = new int[pattern.length];
-		prefix[0] = -1;
-		if (pattern.length == 1) {
-			return prefix;
-		}
-		prefix[1] = 0;
-		int j = 0;
-		for (int i = 1; i < pattern.length - 1; i++) {
-			if (pattern[i] == pattern[j]) {
-				prefix[i + 1] = prefix[i] + 1;
-				j++;
-			} else {
-				prefix[i + 1] = 0;
-				j = 0;
-			}
-		}
-		return prefix;
+	    int prefix[] = new int[pattern.length];
+            prefix[0] = -1;
+            int j = 0;
+            for (int i = 1; i < pattern.length - 1;) {
+                if (pattern[i] == pattern[j]) {
+                    j++;
+                    prefix[i + 1] = j;
+                    i++;
+                } else if (j != 0) {
+                    j = 0;
+                } else {
+                    prefix[i + 1] = 0;
+                    i++;
+                }
+            }
+            return prefix;
 	}
 }
